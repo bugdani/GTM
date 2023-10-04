@@ -1,0 +1,10 @@
+ window.addEventListener('blur', function(e){
+    if(document.activeElement == document.querySelector('#hubspot-conversations-iframe'))
+    {
+        window.dataLayer.push({
+        'event': 'hubspot-conversation-open',
+        'event_params': {
+        }
+      })
+    }
+  });
