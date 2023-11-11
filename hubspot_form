@@ -1,10 +1,7 @@
- window.addEventListener('blur', function(e){
-    if(document.activeElement == document.querySelector('#hubspot-conversations-iframe'))
-    {
-        window.dataLayer.push({
-        'event': 'hubspot-conversation-open',
-        'event_params': {
-        }
-      })
+  window.addEventListener("message", function(event) {
+    if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
+      window.dataLayer.push({
+        'event': 'hubspot-form-success',
+      });
     }
   });
