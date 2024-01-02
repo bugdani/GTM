@@ -1,0 +1,9 @@
+<!-- Code for tawk.to to trigger custom events from dataLayer and send to Google Analytics -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API || {};
+Tawk_API.onChatStarted = function () {
+  dataLayer.push({
+    event : 'chat_started' // value here must be equal to the value set on the custom event tag and trigger
+  });
+}
+</script>
