@@ -1,0 +1,18 @@
+<script>
+   // Push to dataLayer
+  dataLayer.push({
+    'event': 'shopifyOrderDetails',
+    'email': '{{ email }}',
+    'phone': '{{ shipping_address.phone }}',
+    'firstName': '{{ shipping_address.first_name }}',
+    'lastName': '{{ shipping_address.last_name }}',
+    'street': '{{ shipping_address.address1 }}',
+    'city': '{{ shipping_address.city }}',
+    'region': '{{ shipping_address.province }}',
+    'country': '{{ shipping_address.country }}',
+    'postalCode': '{{ shipping_address.zip }}',
+    'value': '{{ total_price | divided_by: 100.0 | round: 2 }}',
+    'currencyCode': '{{ shop.currency }}',
+    'orderId': '{{ order.id }}'
+  });
+</script>
